@@ -1,0 +1,6 @@
+diff a/exam_market_blank/test b/exam_market_blank/test	(rejected hunks)
+@@ -12,3 +12,4 @@
+ test_revert
+ =======
+ test_DongHee
++>>>>>>> parent of f9ce699 (revert_commit)

@@ -1,12 +1,8 @@
 test_Jun_Young
 test_Yura
 TEST_SHIN
+<<<<<<< HEAD
 test_DongHee
-revert_commit- Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-revert_commit Delete - Lee_Jun_Young
-test_revert
+=======
+test_DongHee
+>>>>>>> parent of f9ce699 (revert_commit)
