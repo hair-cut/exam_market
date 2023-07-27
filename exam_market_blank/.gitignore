@@ -1,4 +1,8 @@
 target/
+<<<<<<< HEAD
+**/.gradle/
+=======
+>>>>>>> 4d0c36d69247521acc99583a9ecbb526416af45b
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse
 
