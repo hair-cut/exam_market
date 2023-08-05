@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>게시판 작성</title>
+<script th:src="@{/js/jquery-3.6.0.js}"></script>
+<script>
+function check(){
+	
+	let title = document.getElementById('title').value;
+	let contents = document.getElementById('contents').value;
+	
+	if(title == ""){
+		alert('제목을 입력하시오');
+		return false;
+	}if(text == ""){
+		alert('내용을 입력하시오');
+		return false;
+	}else{
+		return true;
+	}
+}
+</script>
+</head>
+<body>
+	<form th:action="@{/board/write}" method="post" onsubmit="return check()">
+		<table border="2">
+			<tr>
+				<td>
+					<p>카테고리</p>
+				</td>
+				<td>
+					<select id="category" name="category">
+						<option value="computer" th:selected="${category} == 'computer'">컴퓨터</option>
+						<option value="car" th:selected="${category} == 'car'">자동차</option>
+						<option value="camera" th:selected="${category} == 'camera'">카메라</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>제목</p>
+				</td>
+				<td>
+					<textarea rows="1" cols="30" name="title" id="title"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>내용</p>
+				</td>
+				<td>
+					<textarea rows="30" cols="30" name="contents" id="contents"></textarea>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="저장">
+	</form>
+</body>
+</html>

@@ -9,7 +9,34 @@ import net.softsociety.exam.domain.Member;
 
 @Service
 public class MemberSeviceImpl implements MemberService {
+	
+	@Autowired
+	MemberDAO dao;
+	
+	@Autowired
+	private PasswordEncoder passwordencoder; 
 
-   
+	@Override
+	public int MemberJoin(Member member) {
+		
+		String pw = passwordencoder.encode(member.getMemberpw());
+		
+		member.setMemberpw(pw);
+		
+		int i = dao.MemberJoin(member);
+		
+		return i;
+	}
 
+	@Override
+	public int login(Member member) {
+		
+		String pw = passwordencoder.encode(member.getMemberpw());
+		
+		member.setMemberpw(pw);
+		
+		int i = dao.login(member);
+		
+		return i;
+	}
 }

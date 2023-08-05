@@ -26,9 +26,13 @@ public class WebSecurityConfig {
         .authorizeRequests()
         .antMatchers(
         		"/",
+        		"/board/**",
+        		"/loginForm",
+        		"/member/**",
                 "/image/**",
                 "/css/**",
-                "/js/**").permitAll()
+                "/js/**"
+                ).permitAll()
         .anyRequest().authenticated()
         .and()
         .formLogin()					
@@ -39,7 +43,7 @@ public class WebSecurityConfig {
         .and()
         .logout()
         .logoutUrl("/member/logout")
-        .logoutSuccessUrl("/").permitAll()
+        .logoutSuccessUrl("/home").permitAll()
         .and()
         .cors()
         .and()

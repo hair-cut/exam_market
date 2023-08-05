@@ -5,8 +5,25 @@
 <mapper namespace="net.softsociety.exam.dao.MemberDAO">
 
 <!-- 회원정보 저장 -->
-<insert id="insertMember" parameterType="Member">
-
+<insert id="MemberJoin" parameterType="Member">
+	insert 
+		into 
+			market_member(
+			memberid, 
+			memberpw, 
+			membername,  
+			phone
+			)
+			values(#{memberid},
+					#{memberpw},
+					#{membername},
+					#{phone})
 </insert>
+<select id="login" parameterType="Member">
+	select * from 
+		market_member
+			where 
+			memberid = #{memberid} and memberpw = #{memberpw}
+</select>
 
 </mapper>

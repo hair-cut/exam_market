@@ -10,4 +10,8 @@ import net.softsociety.exam.domain.Member;
 @Mapper
 public interface MemberDAO {
 
+	int MemberJoin(Member member);
+
+	int login(Member member);
+
 }

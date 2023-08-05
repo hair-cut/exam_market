@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<script th:src="@{/js/jquery-3.6.0.js}"></script>
+<script>
+	function check(){
+		
+		let id = document.getElementById('memberid').value;
+		let pw = document.getElementById('memberpw').value;
+		let name = document.getElementById('membername').value;
+		let phone = document.getElementById('phone').value;
+		
+		if(id.length < 3 || id.length > 10){
+			alert('ID는 3~10자 내외로 입력하세요');
+			return false;
+		}if(pw.length < 3 || pw.length > 10){
+			alert('패스워드는 3~10자 내외로 입력하세요');
+			return false;
+		}if(name == ""){
+			alert('이름을 입력하시오');
+			return false;
+		}if(phone == ""){
+			alert('전화번호를 입력하시오');
+			return false;
+		}else{
+			return true;
+		}
+	}
+</script>
+</head>
+<body>
+	<h2> [회원가입] </h2>
+	
+	<form th:action="@{/member/join}" method="post" onsubmit="return check()">
+	<table>
+		<tr>
+			<td>
+				ID		
+			</td>
+			<td>
+				<input type="text" name="memberid" id="memberid">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				비밀번호			
+			</td>
+			<td>
+				<input type="password" name="memberpw" id="memberpw">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				이름			
+			</td>
+			<td>
+				<input type="text" name="membername" id="membername">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				전화번호		
+			</td>
+			<td>
+				<input type="tel" name="phone" id="phone">
+			</td>
+		</tr>			
+	</table>
+		<input type="submit" value="가입">
+		<input type="reset" value="다시기입">
+	</form>
+</body>
+</html>

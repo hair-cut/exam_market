@@ -5,10 +5,19 @@
 <mapper namespace="net.softsociety.exam.dao.BoardDAO">
 
 <!--판매글 저장 -->
-<insert id="insertBoard" parameterType="Board">
-
+<insert id="form_write" parameterType="Board">
+	insert 
+	into 
+	market_board
+	(boardnum,memberid,title,contents,category)
+	values
+	(market_board_seq.nextval,#{memberid},#{title},#{contents},#{category})
 </insert>
-
+<!-- 게시글 조회 -->
+<select id="select" parameterType="ArrayList" resultType="Board">
+	select * from market_board
+</select>
+<!-- 게시글 상세 조회 -->
 
 
 </mapper>

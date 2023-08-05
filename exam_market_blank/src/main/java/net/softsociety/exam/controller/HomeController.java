@@ -18,4 +18,10 @@ public class HomeController {
 		return "home";
 	}
 	
+	//로그인 폼 이동
+	@GetMapping("loginForm")
+	public String loginForm() {
+		return "loginForm";
+	}
+	
 }

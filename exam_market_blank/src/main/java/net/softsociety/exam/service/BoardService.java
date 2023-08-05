@@ -7,5 +7,11 @@ import net.softsociety.exam.domain.Reply;
 
 public interface BoardService {
 
+	int form_write(Board board);
+
+	ArrayList<Board> select();
+
+	int read(int boardnum);
+
 
 }
